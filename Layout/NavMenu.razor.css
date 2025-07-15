@@ -1,3 +1,37 @@
+/* Override Bootstrap navbar background */
+.top-row.navbar {
+    background-color: #0d0d0d !important;
+    border-bottom: 1px solid #00ffff; /* glowing border line */
+    overflow:hidden;
+    width:100%;
+}
+
+/* Change brand text */
+.navbar-dark .navbar-brand {
+    color: #A0E7E5 !important; /*Light cyan color, like snow */
+    font-family: 'Orbitron', sans-serif;
+}
+
+.nav-item a.nav-link {
+    color: #A0E7E5 !important;
+    background-color: transparent;
+    transition: background 0.2s ease-in-out;
+    border-radius: 4px;
+}
+
+/* On active page */
+.nav-item a.nav-link.active {
+    background-color: rgba(0, 255, 255, 0.2) !important;
+    color: white !important;
+}
+
+/* On hover */
+.nav-item a.nav-link:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: white;
+}
+
+
 .navbar-toggler {
     background-color: rgba(255, 255, 255, 0.1);
 }
@@ -8,7 +42,8 @@
 }
 
 .navbar-brand {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    color: #A0E7E5 !important;
 }
 
 .bi {
@@ -47,12 +82,15 @@
     }
 
     .nav-item ::deep a {
+        font-family: 'Orbitron', sans-serif;
         color: #d7d7d7;
         border-radius: 4px;
-        height: 3rem;
+        height: 3.5rem;
         display: flex;
         align-items: center;
-        line-height: 3rem;
+        line-height: 3.5rem;
+        overflow: hidden;
+        padding: 0 0.75rem;
     }
 
 .nav-item ::deep a.active {
@@ -74,10 +112,25 @@
         /* Never collapse the sidebar for wide screens */
         display: block;
     }
-    
+
     .nav-scrollable {
-        /* Allow sidebar to scroll for tall menus */
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
+        background-color: #0d0d0d !important;
+    }
+
+
+
+}
+@media (max-width: 640.98px) {
+    .navbar-collapse.show,
+    .navbar-collapse.show .nav.flex-column,
+    .navbar-collapse.show .nav-scrollable,
+    .nav.flex-column,
+    .nav-scrollable {
+        background-image: none !important;
+        background-color: #0d0d0d !important;
     }
 }
+
+

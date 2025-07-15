@@ -1,7 +1,28 @@
 ﻿@page "/"
 
+@inject IJSRuntime JS
+
 <PageTitle>Home</PageTitle>
+<div class="hero-section">
+    <div class="cartoon-container">
+        <img src="images/CartoonMeNoEyes.png" alt="Cartoon Face" />
 
-<h1>Hello, world!</h1>
+        <!-- Black pupils -->
+        <div class="pupil" id="pupil-left"></div>
+        <div class="pupil" id="pupil-right"></div>
+    </div>
+    <h1>Hi, I'm Adam. A C# Developer.</h1>
+    <h4>I craft clean, scalable solutions using .NET and modern web tech.</h4>
+</div>
 
-Welcome to your new app.
+@code {
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("initEyeFollow");
+        }
+    }
+
+}
+

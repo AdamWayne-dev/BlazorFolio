@@ -1,5 +1,12 @@
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #A0E7E5;
 }
 
 h1:focus {
@@ -101,3 +108,80 @@ a, .btn-link {
 code {
     color: #c02d76;
 }
+
+.card {
+    background: #18202C;
+    color: #40C0CB;
+}
+
+main .hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+    padding: 2rem;
+    background-color: #0d0d0d;
+    color: #A0E7E5;
+}
+
+main .hero-section h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+main .hero-section h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 600px;
+    line-height: 1.6;
+    color: #d7d7d7;
+}
+
+main .hero-section img {
+    max-width: 500px;
+    height: auto;
+    margin-top: 1.5rem;
+}
+.cartoon-container {
+    position: relative;
+    width: 500px; /* Adjust to your image size */
+    height: auto;
+}
+
+    .cartoon-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+/* Pupils are black circles */
+.pupil {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: #0e0d0d;
+    border-radius: 50%;
+    top: 0; /* Will adjust in JS */
+    left: 0; /* Will adjust in JS */
+    pointer-events: none;
+    transition: top 0.1s ease, left 0.1s ease;
+}
+
+/* Starting positions of pupils inside empty sockets */
+/* Adjust these to where the empty sockets are in your image */
+#pupil-left {
+    top: 180px;
+    left: 145px;
+}
+
+#pupil-right {
+    top: 180px;
+    left: 265px;
+}
+
