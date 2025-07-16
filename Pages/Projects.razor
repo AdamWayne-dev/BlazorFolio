@@ -2,6 +2,7 @@
 @using Blazor_Portfolio_Website.Models
 @using Blazor_Portfolio_Website.Services
 @inject ProjectService ProjectService // Inject the service
+@inject IJSRuntime JS
 
 <h3>My Portfolio Projects</h3>
 
@@ -43,5 +44,13 @@
     protected override void OnInitialized()
     {
         projects = ProjectService.GetProjects(); // Get projects from the injected service
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("destroyBugSpawning");
+        }
     }
 }
