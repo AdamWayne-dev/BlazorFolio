@@ -161,6 +161,38 @@ main .about-container {
     flex-wrap: wrap;
 }
 
+main .about-me h2{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    
+}
+
+main .about-me h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+}
+
+main .about-me p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 600px;
+    line-height: 1.6;
+    color: #d7d7d7;
+}
+
+main .card .card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+}
+
+main .card .card-text {
+        font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d7d7d7;
+}
+
 main .about-text {
     padding: 10px, 50px;
     flex: 1;

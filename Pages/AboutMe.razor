@@ -1,0 +1,48 @@
+﻿@page "/aboutme"
+
+@inject IJSRuntime JS
+
+
+<section class="about-me p-6 max-w-3xl mx-auto text-gray-800">
+    <h2 class="text-3xl font-bold mb-4">About Me</h2>
+    <p class="mb-6">
+        Hi, I’m <strong>Adam Wayne</strong> — a software developer based in Plymouth, United Kingdom (and happy to commute).
+        I’m passionate about building functional, engaging software across full-stack, backend, application, and game development.
+        I love solving problems, learning new technologies, and continuously improving my craft.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-2">Skills</h3>
+    <ul class="list-disc list-inside mb-6">
+        <li><strong>Languages & Frameworks:</strong> C#, .NET, JavaScript, HTML/CSS, Lua, Java, Python</li>
+        <li><strong>Tools & Technologies:</strong> Unity, Blazor, ASP.NET, REST APIs, SQL, Flask</li>
+        <li><strong>Other:</strong> Game mechanics design, clean code practices, version control (Git), responsive UI design</li>
+    </ul>
+
+    <h3 class="text-2xl font-semibold mb-2">What I’m Looking For</h3>
+    <p class="mb-6">
+        I’m currently open to opportunities in:
+    </p>
+    <ul class="list-disc list-inside mb-6">
+        <li>Full-stack development</li>
+        <li>Backend or API development</li>
+        <li>Application development</li>
+        <li>Game development (2D/3D, Unity-based)</li>
+    </ul>
+    <p class="mb-6">
+        I enjoy working on challenging projects that push me to learn and grow. Whether it’s contributing to a team
+        or taking ownership of a solo feature, I thrive when I’m building something meaningful.
+    </p>
+
+    <h3 class="text-2xl font-semibold mb-2">Get in Touch</h3>
+    <p class="mb-1">Plymouth, United Kingdom</p>
+    <a href="mailto:adamwayne.dev@gmail.com" class="text-blue-600 hover:underline">adamwayne.dev@gmail.com</a>
+</section>
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("destroyBugSpawning");
+        }
+    }
+}
