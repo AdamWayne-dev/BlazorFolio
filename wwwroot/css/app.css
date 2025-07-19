@@ -238,7 +238,7 @@ main .about-text {
     left: 0;
     width: 40px;
     height: 40px;
-    background-image: url('/images/bug.png');
+    background-image: url('/../images/bug.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
