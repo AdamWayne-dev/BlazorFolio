@@ -26,6 +26,17 @@ namespace Blazor_Portfolio_Website.Services
                     ProjectUrl = "www.placeholder.com",
                     GitHubUrl = "www.placeholder.com",
                     Technologies = new List<string> {"Blender","Aseprite","Unity", "C#"}
+                },
+
+                new Project
+                {
+                    Name = "Another Fishing Game",
+                    Description = "A small fishing game I made in a day using the PICO-8 Engine",
+                    ImageUrl = "AnotherFishingGame.png",
+                    ProjectUrl = "https://www.lexaloffle.com/bbs/?tid=150377",
+                    GitHubUrl = "",
+                    Technologies = new List<string> { "Lua", "PICO-8" },
+                    EmbedUrl = "https://www.lexaloffle.com/bbs/widget.php?pid=another_fishing_game"
                 }
             };
         } 

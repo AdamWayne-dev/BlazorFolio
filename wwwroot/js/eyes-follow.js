@@ -29,7 +29,7 @@
     });
 };
 
-// 🔫 Laser firing from both pupils
+// Laser firing from both pupils
 function fireLaserFromPupil(pupilElement, event) {
     const pupilRect = pupilElement.getBoundingClientRect();
     const centerX = pupilRect.left + pupilRect.width / 2;
@@ -82,7 +82,7 @@ function initBugSpawning() {
         document.body.appendChild(bug);
         bugs.push(bug);
 
-        // Animate bug moving to the right (adjust duration and distance)
+        // Animate bug moving to the right
         bug.animate([
             { transform: 'translateX(0)' },
             { transform: `translateX(${window.innerWidth}px)` }
@@ -96,7 +96,7 @@ function initBugSpawning() {
         };
     };
 
-    // Spawn a bug every 1.5 seconds (adjust as needed)
+    // Spawn a bug based on an interval
     bugInterval = setInterval(spawnBug, 1500);
 }
 
@@ -111,12 +111,12 @@ function destroyBugSpawning() {
 }
 
 function splatBug(bug) {
-    // Get bug position & size
+
     const rect = bug.getBoundingClientRect();
 
     // Create splat element
     const splat = document.createElement('img');
-    splat.src = 'images/bugsplat.png';  // your splat image path
+    splat.src = 'images/bugsplat.png';
     splat.style.position = 'fixed';
     splat.style.left = `${rect.left}px`;
     splat.style.top = `${rect.top}px`;
@@ -124,16 +124,12 @@ function splatBug(bug) {
     splat.style.height = `${rect.height}px`;
     splat.style.pointerEvents = 'none'; // so it doesn't block clicks
     splat.style.zIndex = 1000;
-
-    splat.classList.add('splat-fade'); // Add a class for animation if needed')
-
+    splat.classList.add('splat-fade');
     document.body.appendChild(splat);
 
-    // Remove bug immediately
     bug.remove();
     bugs = bugs.filter(b => b !== bug);
 
-    // Remove splat after animation or timeout (e.g., 800ms)
     splat.addEventListener('animationend', () => {
         splat.remove();
     })
@@ -168,13 +164,11 @@ function onLaserShoot(event) {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
 
-    // Show lasers visually here (your existing code)...
-
-    // Now check collision with bugs
+    // Checks collision with bugs
     bugs.forEach(bug => {
         const bugRect = bug.getBoundingClientRect();
 
-        // Check if bug is close enough to laser line (either left or right laser)
+        // Check if bug is close enough to laser line
         if (isPointNearLine({ x: bugRect.left + bugRect.width / 2, y: bugRect.top + bugRect.height / 2 }, leftStart, { x: mouseX, y: mouseY }, 30) ||
             isPointNearLine({ x: bugRect.left + bugRect.width / 2, y: bugRect.top + bugRect.height / 2 }, rightStart, { x: mouseX, y: mouseY }, 30)) {
 
@@ -198,7 +192,7 @@ function isPointNearLine(point, lineStart, lineEnd, threshold) {
     const dot = A * C + B * D;
     const len_sq = C * C + D * D;
     let param = -1;
-    if (len_sq !== 0) //in case of 0 length line
+    if (len_sq !== 0)
         param = dot / len_sq;
 
     let xx, yy;

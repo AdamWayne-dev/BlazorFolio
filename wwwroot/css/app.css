@@ -155,10 +155,10 @@ main .about-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem; /* spacing between text and image */
+    gap: 2rem;
     padding: 2rem;
     padding-top: 50px;
-    flex-wrap: wrap; /* allows stacking on small screens */
+    flex-wrap: wrap;
 }
 
 main .about-text {
@@ -168,7 +168,7 @@ main .about-text {
 }
 .cartoon-container {
     position: relative;
-    width: 500px; /* Adjust to your image size */
+    width: 500px; 
     height: auto;
 }
 
@@ -178,21 +178,19 @@ main .about-text {
         display: block;
     }
 
-/* Pupils are black circles */
+
 .pupil {
     position: absolute;
     width: 26px;
     height: 26px;
     background-color: #0e0d0d;
     border-radius: 50%;
-    top: 0; /* Will adjust in JS */
-    left: 0; /* Will adjust in JS */
+    top: 0; 
+    left: 0;
     pointer-events: none;
     transition: top 0.1s ease, left 0.1s ease;
 }
 
-/* Starting positions of pupils inside empty sockets */
-/* Adjust these to where the empty sockets are in your image */
 #pupil-left {
     top: 180px;
     left: 145px;
@@ -205,10 +203,10 @@ main .about-text {
 
 .bug {
     position: absolute;
-    left: 0; /* Start from the left */
+    left: 0;
     width: 40px;
     height: 40px;
-    background-image: url('/images/bug.png'); /* Replace with your image */
+    background-image: url('/images/bug.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -224,7 +222,7 @@ main .about-text {
     }
 
     to {
-        transform: translateX(99vw); /* Slightly off screen to avoid edge flicker */
+        transform: translateX(99vw);
     }
 }
 @keyframes splatFade {
@@ -256,7 +254,7 @@ main .about-text {
 
 
 #laser-left {
-    left: 145px; /* start point from pupil */
+    left: 145px;
     top: 180px;
 }
 

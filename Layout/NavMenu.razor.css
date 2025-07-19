@@ -20,14 +20,14 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Nav menu container */
+
 .nav-menu-container {
     background-color: #0d0d0d;
     padding: 0.5rem 0.5rem;
     text-align: center;
 }
 
-/* Nav items */
+
 .nav-item {
     display: inline-block;
     margin: 0 1rem;
@@ -63,7 +63,7 @@
             color: white;
         }
 
-/* Icons */
+
 .bi {
     width: 1.25rem;
     height: 1.25rem;
@@ -76,7 +76,7 @@
 }
 
 
-/* Icons SVG */
+
     .bi-house-door-fill-nav-menu {
     background-image: url("Placeholder.png");
 }
@@ -89,7 +89,7 @@
     background-image: url("Placeholder.png");
 }
 
-/* Responsive toggle (mobile) */
+
 @media (max-width: 640.98px) {
     .nav-menu-container.collapse {
         display: none;
