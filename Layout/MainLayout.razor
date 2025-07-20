@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <header class="top-navbar">
+        <NavMenu OnMenuToggled="HandleMenuToggled" />
+    </header>
+
+    <main class="@(isMenuOpen ? "menu-open" : "")">
+        <div class="top-row px-4">
+            <h1>Adam Wayne</h1>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+@code {
+    private bool isMenuOpen = false;
+
+    private void HandleMenuToggled(bool expanded)
+    {
+        isMenuOpen = expanded;
+    }
+}

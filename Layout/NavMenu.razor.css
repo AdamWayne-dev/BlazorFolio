@@ -1,0 +1,120 @@
+.top-row.navbar {
+    background-color: #0d0d0d !important;
+    border-bottom: 1px solid #00ffff;
+    width: 100%;
+    height: 4.05rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+}
+
+.navbar-dark .navbar-brand {
+    color: #A0E7E5 !important;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.navbar-toggler {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.nav-menu-container {
+    background-color: #0d0d0d;
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+}
+
+
+.nav-item {
+    display: inline-block;
+    margin: 0 1rem;
+    font-size: 0.95rem;
+}
+.nav-link {
+    display: flex;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.95rem;
+    color: #A0E7E5 !important;
+    text-decoration: none;
+    padding: 0.5rem 0;
+}
+
+    .nav-item ::deep a {
+        font-family: 'Orbitron', sans-serif;
+        color: #d7d7d7;
+        border-radius: 4px;
+        padding: 0.5rem 0.75rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+        .nav-item ::deep a.active {
+            background-color: rgba(255, 255, 255, 0.37);
+            color: white;
+        }
+
+        .nav-item ::deep a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+
+.bi {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+    top: 0; 
+    position: relative;
+}
+
+
+
+    .bi-house-door-fill-nav-menu {
+    background-image: url("Placeholder.png");
+}
+
+.bi-plus-square-fill-nav-menu {
+    background-image: url("Placeholder.png");
+}
+
+.bi-list-nested-nav-menu {
+    background-image: url("Placeholder.png");
+}
+
+
+@media (max-width: 640.98px) {
+
+    body {
+        padding-top: 4.05rem; 
+    }
+
+    .nav-menu-container:not(.collapse) + .main-content {
+        margin-top: 6rem; 
+    }
+
+    .nav-menu-container.collapse {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: block;
+    }
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler {
+        display: none;
+    }
+
+    .nav-menu-container {
+        display: block !important;
+    }
+}

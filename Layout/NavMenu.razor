@@ -1,0 +1,44 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark top-row px-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">AW</a>
+
+        <button class="navbar-toggler" type="button" @onclick="ToggleNavMenu" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="nav-menu-container @NavMenuCssClass navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item px-2">
+                    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                         Home
+                    </NavLink>
+                </li>
+                <li class="nav-item px-2">
+                    <NavLink class="nav-link" href="projects">
+                         Projects
+                    </NavLink>
+                </li>
+                <li class="nav-item px-2">
+                    <NavLink class="nav-link" href="aboutme">
+                         About Me
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : "show";
+
+    [Parameter]
+    public EventCallback<bool> OnMenuToggled { get; set; }
+
+    private async Task ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+        await OnMenuToggled.InvokeAsync(!collapseNavMenu); // true when menu is open
+    }
+}
